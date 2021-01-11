@@ -10,7 +10,17 @@ namespace JsonSoft
         public static bool ExistsFile(string path)
             => File.Exists(path);
 
-        public static string CheckFileExtension(string file, string extension)
-           => Path.ChangeExtension(file, extension);
+        public static bool CheckFileExtension(string file, string extension)
+            => Path.GetExtension(file) == extension;
+
+        public static bool ChangeFileExtension(ref string file, string extension)
+        {
+            if (CheckFileExtension(file, extension))
+            {
+                file = Path.ChangeExtension(file, extension);
+                return true;
+            }
+            return false;
+        }
     }
 }

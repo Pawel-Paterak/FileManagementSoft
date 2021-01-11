@@ -7,7 +7,7 @@ namespace JsonSoft.Reader
     {
         public T Deserialize<T>(string path) where T : class
         {
-            T temp = default;
+            T temp = null;
             using (StreamReader sR = new StreamReader(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
