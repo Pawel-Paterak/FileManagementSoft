@@ -1,7 +1,7 @@
-﻿using JsonSoft.Reader;
-using JsonSoft.Writer;
+﻿using JsonSoft.Json.Reader;
+using JsonSoft.Json.Writer;
 
-namespace JsonSoft
+namespace JsonSoft.Json
 {
     public class JsonService
     {
