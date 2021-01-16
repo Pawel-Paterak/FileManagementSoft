@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.IO;
 
-namespace JsonSoft.Reader
+namespace JsonSoft.Json.Reader
 {
     public class JsonReader
     {
