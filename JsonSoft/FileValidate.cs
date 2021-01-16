@@ -15,7 +15,7 @@ namespace JsonSoft
 
         public static bool ChangeFileExtension(ref string file, string extension)
         {
-            if (CheckFileExtension(file, extension))
+            if (!CheckFileExtension(file, extension))
             {
                 file = Path.ChangeExtension(file, extension);
                 return true;
