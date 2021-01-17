@@ -13,5 +13,8 @@ namespace JsonSoft.Json.Writer
                 serializer.Serialize(sW, obj);
             }
         }
+
+        public string SerializeToData<T>(T obj) where T : class
+           => JsonConvert.SerializeObject(obj);
     }
 }

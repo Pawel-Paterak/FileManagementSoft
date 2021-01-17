@@ -17,5 +17,8 @@ namespace JsonSoft.Xml.Reader
             }
             return temp;
         }
+
+        public T DeserializeFromData<T>(string data) where T : class
+            => new ConfigurationContainer().Create().Deserialize<T>(data);
     }
 }

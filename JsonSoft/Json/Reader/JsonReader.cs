@@ -15,5 +15,8 @@ namespace JsonSoft.Json.Reader
             }
             return temp;
         }
+
+        public T DeserializeFromData<T>(string data) where T : class
+            => JsonConvert.DeserializeObject<T>(data);
     }
 }

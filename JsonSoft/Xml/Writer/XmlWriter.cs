@@ -6,7 +6,7 @@ namespace JsonSoft.Xml.Writer
 {
     public class XmlWriter
     {
-        public void Serializer<T>(T obj, string path)
+        public void Serialize<T>(T obj, string path)
         {
             using (StreamWriter sW = new StreamWriter(path))
             {
@@ -14,5 +14,8 @@ namespace JsonSoft.Xml.Writer
                 serializer.Serialize(sW, obj);
             }
         }
+
+        public string SerializeToData<T>(T obj) where T : class
+            => new ConfigurationContainer().Create().Serialize(obj);
     }
 }
