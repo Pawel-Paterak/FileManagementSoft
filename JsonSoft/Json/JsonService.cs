@@ -2,7 +2,7 @@
 using FMSoft.Json.Writer;
 using FMSoft.File;
 
-namespace JsonSoft.Json
+namespace FMSoft.Json
 {
     public class JsonService
     {
