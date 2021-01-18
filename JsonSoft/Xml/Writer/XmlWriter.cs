@@ -2,7 +2,7 @@
 using ExtendedXmlSerializer;
 using ExtendedXmlSerializer.Configuration;
 
-namespace JsonSoft.Xml.Writer
+namespace FMSoft.Xml.Writer
 {
     public class XmlWriter
     {

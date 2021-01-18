@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("JsonSoft")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("FileManagementSoft")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("JsonSoft")]
-[assembly: System.Reflection.AssemblyTitleAttribute("JsonSoft")]
+[assembly: System.Reflection.AssemblyProductAttribute("FileManagementSoft")]
+[assembly: System.Reflection.AssemblyTitleAttribute("FileManagementSoft")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Wygenerowane przez klasę WriteCodeFragment programu MSBuild.

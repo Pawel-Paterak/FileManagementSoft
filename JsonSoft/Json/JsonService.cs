@@ -1,19 +1,20 @@
-﻿using JsonSoft.Json.Reader;
-using JsonSoft.Json.Writer;
+﻿using FMSoft.Json.Reader;
+using FMSoft.Json.Writer;
+using FMSoft.File;
 
-namespace JsonSoft.Json
+namespace FMSoft.Json
 {
     public class JsonService
     {
         private readonly JsonWriter jsonWriter = new JsonWriter();
         private readonly JsonReader jsonReader = new JsonReader();
-        private const string exenstionJson = ".Json";
+        private readonly FileManagement fileManagement = new FileManagement();
 
         public void Serialize<T>(T obj, string path) where T : class
         {
             if (FileValidate.ExistsFile(path))
             {
-                FileValidate.ChangeFileExtension(ref path, exenstionJson);
+                fileManagement.ChangeFileExtension(ref path, PathExtension.Json);
                 jsonWriter.Serialize(obj, path);
             }
         }
@@ -22,7 +23,7 @@ namespace JsonSoft.Json
         {
             if (FileValidate.ExistsFile(path))
             {
-                FileValidate.ChangeFileExtension(ref path, exenstionJson);
+                fileManagement.ChangeFileExtension(ref path, PathExtension.Json);
                 return jsonReader.Deserialize<T>(path);
             }
             return null;

@@ -2,7 +2,7 @@
 using ExtendedXmlSerializer.Configuration;
 using System.IO;
 
-namespace JsonSoft.Xml.Reader
+namespace FMSoft.Xml.Reader
 {
     public class XmlReader
     {

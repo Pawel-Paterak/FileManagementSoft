@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.IO;
 
-namespace JsonSoft.Json.Writer
+namespace FMSoft.Json.Writer
 {
     public class JsonWriter
     {

@@ -1,20 +1,21 @@
-﻿using JsonSoft.Xml.Reader;
-using JsonSoft.Xml.Writer;
+﻿using FMSoft.Xml.Reader;
+using FMSoft.Xml.Writer;
+using FMSoft.File;
 
-namespace JsonSoft.Xml
+namespace FMSoft.Xml
 {
     public class XmlService
     {
         private readonly XmlReader xmlReader = new XmlReader();
         private readonly XmlWriter xmlWriter = new XmlWriter();
-        private const string extensionXml = ".Xml";
+        private readonly FileManagement fileManagement = new FileManagement();
 
         public void Serialize<T>(T obj, string path) where T : class
         {
             if(FileValidate.ExistsFile(path))
             {
-                FileValidate.ChangeFileExtension(ref path, extensionXml);
-                xmlWriter.Serializer(obj, path);
+                fileManagement.ChangeFileExtension(ref path, PathExtension.Xml);
+                xmlWriter.Serialize(obj, path);
             }
         }
 
@@ -22,7 +23,7 @@ namespace JsonSoft.Xml
         {
             if (FileValidate.ExistsFile(path))
             {
-                FileValidate.ChangeFileExtension(ref path, extensionXml);
+                fileManagement.ChangeFileExtension(ref path, PathExtension.Xml);
                 return xmlReader.Deserialize<T>(path);
             }
             return null;
