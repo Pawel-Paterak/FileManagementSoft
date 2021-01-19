@@ -6,7 +6,7 @@ namespace FMSoft.File
     {
         public bool ChangeFileExtension(ref string file, string extension)
         {
-            if (!FileValidate.CheckFileExtension(file, extension))
+            if (!PathValidate.CheckFileExtension(file, extension))
             {
                 file = Path.ChangeExtension(file, extension);
                 return true;

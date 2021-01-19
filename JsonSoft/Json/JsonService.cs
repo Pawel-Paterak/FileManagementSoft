@@ -12,7 +12,8 @@ namespace FMSoft.Json
 
         public void Serialize<T>(T obj, string path) where T : class
         {
-            if (FileValidate.ExistsFile(path))
+            string directory = PathManagement.GetDirectoryFromPath(path);
+            if (FileValidate.ExistsDirectory(directory))
             {
                 fileManagement.ChangeFileExtension(ref path, PathExtension.Json);
                 jsonWriter.Serialize(obj, path);
@@ -21,7 +22,8 @@ namespace FMSoft.Json
 
         public T Deserialize<T>(string path) where T : class
         {
-            if (FileValidate.ExistsFile(path))
+            string directory = PathManagement.GetDirectoryFromPath(path);
+            if (FileValidate.ExistsDirectory(directory))
             {
                 fileManagement.ChangeFileExtension(ref path, PathExtension.Json);
                 return jsonReader.Deserialize<T>(path);

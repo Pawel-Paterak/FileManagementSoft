@@ -12,7 +12,8 @@ namespace FMSoft.Xml
 
         public void Serialize<T>(T obj, string path) where T : class
         {
-            if(FileValidate.ExistsFile(path))
+            string directory = PathManagement.GetDirectoryFromPath(path);
+            if (FileValidate.ExistsDirectory(path))
             {
                 fileManagement.ChangeFileExtension(ref path, PathExtension.Xml);
                 xmlWriter.Serialize(obj, path);
@@ -21,7 +22,8 @@ namespace FMSoft.Xml
 
         public T Deserialize<T>(string path) where T : class
         {
-            if (FileValidate.ExistsFile(path))
+            string directory = PathManagement.GetDirectoryFromPath(path);
+            if (FileValidate.ExistsDirectory(path))
             {
                 fileManagement.ChangeFileExtension(ref path, PathExtension.Xml);
                 return xmlReader.Deserialize<T>(path);
