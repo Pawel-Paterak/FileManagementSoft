@@ -1,6 +1,5 @@
-﻿using ExtendedXmlSerializer;
-using ExtendedXmlSerializer.Configuration;
-using System.IO;
+﻿using System.IO;
+using System.Xml.Serialization;
 
 namespace FMSoft.Xml.Reader
 {
@@ -9,16 +8,23 @@ namespace FMSoft.Xml.Reader
         public T Deserialize<T>(string path) where T : class
         {
             T temp = null;
-            
             using (StreamReader sR = new StreamReader(path))
             {
-                IExtendedXmlSerializer serializer = new ConfigurationContainer().Create();
-                temp = serializer.Deserialize<T>(sR);
+                XmlSerializer serializer = new XmlSerializer(typeof(T));
+                temp = serializer.Deserialize(sR) as T;
             }
             return temp;
         }
 
         public T DeserializeFromData<T>(string data) where T : class
-            => new ConfigurationContainer().Create().Deserialize<T>(data);
+        {
+            T temp = null;
+            using (StringReader sR = new StringReader(data))
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(T));
+                temp = serializer.Deserialize(sR) as T;
+            }
+            return temp;
+        }
     }
 }
