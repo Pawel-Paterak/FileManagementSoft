@@ -1,30 +1,13 @@
-﻿using System.IO;
-using System.Xml.Serialization;
+﻿using YAXLib;
 
 namespace FMSoft.Xml.Reader
 {
     public class XmlReader
     {
         public T Deserialize<T>(string path) where T : class
-        {
-            T temp = null;
-            using (StreamReader sR = new StreamReader(path))
-            {
-                XmlSerializer serializer = new XmlSerializer(typeof(T));
-                temp = serializer.Deserialize(sR) as T;
-            }
-            return temp;
-        }
+            => new YAXSerializer(typeof(T)).DeserializeFromFile(path) as T;
 
         public T DeserializeFromData<T>(string data) where T : class
-        {
-            T temp = null;
-            using (StringReader sR = new StringReader(data))
-            {
-                XmlSerializer serializer = new XmlSerializer(typeof(T));
-                temp = serializer.Deserialize(sR) as T;
-            }
-            return temp;
-        }
+            => new YAXSerializer(typeof(T)).Deserialize(data) as T;
     }
 }
