@@ -1,21 +1,15 @@
 ﻿using System.IO;
-using ExtendedXmlSerializer;
-using ExtendedXmlSerializer.Configuration;
+using System.Xml.Serialization;
+using YAXLib;
 
 namespace FMSoft.Xml.Writer
 {
     public class XmlWriter
     {
-        public void Serialize<T>(T obj, string path)
-        {
-            using (StreamWriter sW = new StreamWriter(path))
-            {
-                IExtendedXmlSerializer serializer = new ConfigurationContainer().Create();
-                serializer.Serialize(sW, obj);
-            }
-        }
+        public void Serialize<T>(T obj, string path) where T : class
+            => new YAXSerializer(typeof(T)).SerializeToFile(obj, path);
 
         public string SerializeToData<T>(T obj) where T : class
-            => new ConfigurationContainer().Create().Serialize(obj);
+            => new YAXSerializer(typeof(T)).Serialize(obj);
     }
 }
