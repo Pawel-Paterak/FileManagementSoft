@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4QhW85pTc2PBv+GLn2P8g1W7XeG7QcmW/FNXM1Vy82ayfL6FRSSRlnfzd3XyhjDnQs1jkq/S9q88eM+KL4obDw==",
+  "dgSpecHash": "mkvFsAPwIIOCGNp533pAcdD8afU9Bb56VwF6KIr+jFgXY5lbZJznwagqfofIvzFQp+oA0gxvfJGn9kPFYp72Lw==",
   "success": true,
-  "projectFilePath": "E:\\VisualStudio\\JsonSoft\\JsonSoft\\JsonSoft.csproj",
+  "projectFilePath": "C:\\Users\\Paweł\\Desktop\\Neuer Ordner (2)\\JsonSoft\\JsonSoft\\JsonSoft.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Paweł\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Paweł\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
